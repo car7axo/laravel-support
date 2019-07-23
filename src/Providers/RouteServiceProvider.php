@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support\Providers;
+namespace Car7axo\Laravel\Support\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;

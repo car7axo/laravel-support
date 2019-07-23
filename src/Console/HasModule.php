@@ -1,5 +1,5 @@
 <?php
-namespace App\Support\Console;
+namespace Car7axo\Laravel\Support\Console;
 
 use Illuminate\Support\Str;
 

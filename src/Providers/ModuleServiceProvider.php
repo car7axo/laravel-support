@@ -1,5 +1,5 @@
 <?php
-namespace App\Support\Providers;
+namespace Car7axo\Laravel\Support\Providers;
 
 use App\Support\Providers\Exceptions\ModuleServiceProviderException;
 use Illuminate\Support\Collection;

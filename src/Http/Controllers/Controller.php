@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support\Http\Controllers;
+namespace Car7axo\Laravel\Support\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

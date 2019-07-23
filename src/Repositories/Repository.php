@@ -1,5 +1,5 @@
 <?php
-namespace App\Support\Repositories;
+namespace Car7axo\Laravel\Support\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 
