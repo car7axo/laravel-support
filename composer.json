@@ -25,7 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Car7axo\\Laravel\\Support\\": "src/car7axo/laravel-support/"
+      "Car7axo\\Laravel\\Support\\": "src/"
     }
   },
   "minimum-stability": "dev",
