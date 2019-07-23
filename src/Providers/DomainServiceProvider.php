@@ -1,7 +1,7 @@
 <?php
 namespace Car7axo\Laravel\Support\Providers;
 
-use App\Support\Providers\Exceptions\DomainServiceProviderException;
+use Car7axo\Laravel\Support\Providers\Exceptions\DomainServiceProviderException;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
