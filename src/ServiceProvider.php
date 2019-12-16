@@ -6,7 +6,7 @@ use \Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 class ServiceProvider extends LaravelServiceProvider
 {
     protected $commands = [
-        \Car7axo\Laravel\Support\Console\Commands\MakeControllerCommand::class
+        \Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand::class
     ];
 
     public function boot()

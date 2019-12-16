@@ -5,7 +5,7 @@ use Car7axo\Laravel\Support\Console\ConsoleUtils;
 use Illuminate\Routing\Console\ControllerMakeCommand as LaravelControllerMakeCommand;
 use Symfony\Component\Console\Input\InputArgument;
 
-class MakeControllerCommand extends LaravelControllerMakeCommand
+class ControllerMakeCommand extends LaravelControllerMakeCommand
 {
     use ConsoleUtils;
 
