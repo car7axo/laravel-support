@@ -21,9 +21,9 @@ class ServiceProvider extends LaravelServiceProvider
 
     protected function loadCommands()
     {
-        if ($this->app->runningInConsole()) {
+        //if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
-        }
+        //}
     }
 
 
