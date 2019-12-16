@@ -22,7 +22,10 @@ class ServiceProvider extends LaravelServiceProvider
     protected function loadCommands()
     {
         if ($this->app->runningInConsole()) {
-            $this->commands($this->commands);
+            $this->app->extend('command.make.controller', function() {
+                return new \Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand;
+            });
+            //$this->commands($this->commands);
         }
     }
 
