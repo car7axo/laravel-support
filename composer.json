@@ -19,10 +19,9 @@
       "Car7axo\\Laravel\\Support\\Tests\\": "tests/"
     }
   },
-  "minimum-stability": "dev",
   "require": {
     "php": ">=7.2",
-      "car7axo/laravel-support": "dev-master"
+    "car7axo/laravel-support": "dev-master"
   },
   "require-dev": {
       "orchestra/testbench": "^4.0"
