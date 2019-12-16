@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d6935f289eb66271daf879e4d03bfa8",
+    "content-hash": "a364c3a99e5e729254bac98c7660fb83",
     "packages": [],
     "packages-dev": [
         {
@@ -4342,7 +4342,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "car7axo/laravel-support": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

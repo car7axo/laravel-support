@@ -5,9 +5,13 @@ use \Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class ServiceProvider extends LaravelServiceProvider
 {
+    protected $commands = [
+        \Car7axo\Laravel\Support\Console\Commands\MakeControllerCommand::class
+    ];
+
     public function boot()
     {
-        $this->publishConfig();
+        $this->loadCommands();
     }
 
     public function register()
@@ -15,11 +19,12 @@ class ServiceProvider extends LaravelServiceProvider
 
     }
 
-    protected function publishConfig()
+    protected function loadCommands()
     {
-        $this->publishes([
-            __DIR__ . '../config/domains.php',
-            __DIR__ . '../config/units.php',
-        ], 'config');
+        if ($this->app->runningInConsole()) {
+            $this->commands($this->commands);
+        }
     }
+
+
 }

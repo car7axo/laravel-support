@@ -20,8 +20,7 @@
     }
   },
   "require": {
-    "php": ">=7.2",
-    "car7axo/laravel-support": "dev-master"
+    "php": ">=7.2"
   },
   "require-dev": {
       "orchestra/testbench": "^4.0"
