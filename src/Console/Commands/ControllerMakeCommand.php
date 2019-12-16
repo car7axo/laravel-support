@@ -24,6 +24,7 @@ class ControllerMakeCommand extends LaravelControllerMakeCommand
     protected function getArguments()
     {
         return array_merge([
+            ['name', InputArgument::REQUIRED, 'Controller name'],
             ['unit', InputArgument::REQUIRED, 'Unit name'],
         ], parent::getArguments());
     }
