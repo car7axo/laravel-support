@@ -1,0 +1,37 @@
+{
+  "name": "car7axo/laravel-support",
+  "description": "Support files to custom Laravel Framework inspired by DDD pattern",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Diogo Brito",
+          "email": "diogob.cartaxo@gmail.com"
+      }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Car7axo\\Laravel\\Support\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Car7axo\\Laravel\\Support\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.2",
+      "car7axo/laravel-support": "dev-master"
+  },
+  "require-dev": {
+      "orchestra/testbench": "^4.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Car7axo\\Laravel\\Support\\ServiceProvider"
+      ]
+    }
+  }
+}
