@@ -9,6 +9,8 @@ class MakeControllerCommand extends LaravelControllerMakeCommand
 {
     use ConsoleUtils;
 
+    protected $name = 'make2:controller';
+
     public function getDefaultNamespace($rootNamespace)
     {
         return $this->unitNamespace('Http\\Controllers');
