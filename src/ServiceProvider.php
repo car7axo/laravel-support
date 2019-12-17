@@ -1,30 +1,43 @@
 <?php
 namespace Car7axo\Laravel\Support;
 
+use Illuminate\Support\Collection;
 use \Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class ServiceProvider extends LaravelServiceProvider
 {
-    protected $commands = [
-        \Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand::class
+     /**
+     * Providers to be registered
+     *
+     * @var array
+     */
+    protected $providers = [
+        \Car7axo\Laravel\Support\ArtisanServiceProvider::class
     ];
+
 
     public function boot()
     {
-        $this->loadCommands();
+        //
     }
 
     public function register()
     {
-
+        $this->registerProviders(collect($this->providers));
     }
 
-    protected function loadCommands()
+    /**
+     * Register custom service providers.
+     *
+     * @param Collection $providers
+     */
+    protected function registerProviders(Collection $providers)
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands($this->commands);
-        }
+        // loop through providers to be registered.
+        $providers->each(function ($providerClass) {
+            // register a provider class.
+            $this->app->register($providerClass);
+        });
     }
-
 
 }

@@ -9,8 +9,6 @@ class ControllerMakeCommand extends LaravelControllerMakeCommand
 {
     use ConsoleUtils;
 
-    protected $name = 'make:controller';
-
     public function getDefaultNamespace($rootNamespace)
     {
         return $this->unitNamespace('Http\\Controllers');
@@ -24,7 +22,6 @@ class ControllerMakeCommand extends LaravelControllerMakeCommand
     protected function getArguments()
     {
         return array_merge([
-            ['name', InputArgument::REQUIRED, 'Controller name'],
             ['unit', InputArgument::REQUIRED, 'Unit name'],
         ], parent::getArguments());
     }
