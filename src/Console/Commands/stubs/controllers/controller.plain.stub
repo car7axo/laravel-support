@@ -1,0 +1,11 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Http\Request;
+use Car7axo\Laravel\Support\Unit\Http\Controllers\Controller;
+
+class DummyClass extends Controller
+{
+    //
+}
