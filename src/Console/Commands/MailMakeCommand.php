@@ -19,8 +19,8 @@ class  MailMakeCommand extends LaravelMailMakeCommand
     protected function getStub()
     {
         return $this->option('markdown')
-            ? __DIR__.'/stubs/markdown-mail.stub'
-            : __DIR__.'/stubs/mail.stub';
+            ? __DIR__.'/stubs/mail/markdown-mail.stub'
+            : __DIR__.'/stubs/mail/mail.stub';
     }
 
     protected function writeMarkdownTemplate()
@@ -34,7 +34,7 @@ class  MailMakeCommand extends LaravelMailMakeCommand
             $this->files->makeDirectory(dirname($path), 0755, true);
         }
 
-        $this->files->put($path, file_get_contents(__DIR__.'/stubs/markdown.stub'));
+        $this->files->put($path, file_get_contents(__DIR__.'/stubs/mail/markdown.stub'));
     }
 
     protected function buildClass($name)
