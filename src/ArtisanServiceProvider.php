@@ -6,6 +6,7 @@ use Car7axo\Laravel\Support\Console\Commands\ConsoleMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\FactoryMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ModelMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\SeederMakeCommand;
 use \Illuminate\Foundation\Providers\ArtisanServiceProvider as LaravelArtisanServiceProvider;
 
 class ArtisanServiceProvider extends LaravelArtisanServiceProvider
@@ -27,6 +28,7 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'ControllerMake' => ControllerMakeCommand::class,
         'ConsoleMake' => ConsoleMakeCommand::class,
         'ModelMake' => ModelMakeCommand::class,
-        'FactoryMake' => FactoryMakeCommand::class
+        'FactoryMake' => FactoryMakeCommand::class,
+        'SeederMake' => SeederMakeCommand::class,
     ];
 }
