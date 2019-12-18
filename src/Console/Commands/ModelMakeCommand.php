@@ -43,4 +43,20 @@ class ModelMakeCommand extends LaravelModelMakeCommand
             '--model' => $this->option('resource') ? $modelName : null,
         ]);
     }
+
+    /**
+     * Create a model factory for the model.
+     *
+     * @return void
+     */
+    protected function createFactory()
+    {
+        $factory = Str::studly(class_basename($this->argument('name')));
+
+        $this->call('make:factory', [
+            'domain' => $this->argument('domain'),
+            'name' => "{$factory}Factory",
+            '--model' => $this->getNameInput(),
+        ]);
+    }
 }
