@@ -3,6 +3,8 @@ namespace Car7axo\Laravel\Support;
 
 use Car7axo\Laravel\Support\Console\Commands\ConsoleMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\MailMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\ObserverMakeCommand;
 use \Illuminate\Foundation\Providers\ArtisanServiceProvider as LaravelArtisanServiceProvider;
 
 class ArtisanServiceProvider extends LaravelArtisanServiceProvider
@@ -23,5 +25,7 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'VendorPublish' => 'command.vendor.publish',
         'ControllerMake' => ControllerMakeCommand::class,
         'ConsoleMake' => ConsoleMakeCommand::class,
+        'ObserverMake' => ObserverMakeCommand::class,
+        'MailMake' => MailMakeCommand::class,
     ];
 }

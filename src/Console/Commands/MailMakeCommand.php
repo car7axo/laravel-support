@@ -1,5 +1,6 @@
 <?php
-namespace App\Modules\Core\Console\Commands;
+
+namespace Car7axo\Laravel\Support\Console\Commands;
 
 use Car7axo\Laravel\Support\Console\ConsoleUtils;
 use Symfony\Component\Console\Input\InputArgument;
@@ -12,7 +13,7 @@ class  MailMakeCommand extends LaravelMailMakeCommand
 
     public function getDefaultNamespace($rootNamespace)
     {
-        return $this->unitNamespace('Mail');
+        return $this->domainNamespace('Mail');
     }
 
     protected function getStub()
@@ -26,7 +27,7 @@ class  MailMakeCommand extends LaravelMailMakeCommand
     {
         $markdown = $this->option('markdown');
         $filePath = str_replace('.', '/', $markdown).'.blade.php';
-        $path = $this->unitPath('Resources/views');
+        $path = $this->domainPath('Resources/views');
         $path = $path . '/' . $filePath;
 
         if (! $this->files->isDirectory(dirname($path))) {
@@ -39,19 +40,19 @@ class  MailMakeCommand extends LaravelMailMakeCommand
     protected function buildClass($name)
     {
         $stub = $this->files->get($this->getStub());
-        $unit = mb_strtolower($this->argument('module'));
-        $markdownView = "{$unit}::{$this->option('markdown')}";
+        $domain = mb_strtolower($this->argument('domain'));
+        $markdownView = "{$domain}::{$this->option('markdown')}";
 
         return $this->replaceNamespace($stub, $name)
-            ->replaceUnitName($stub, $unit)
+            ->replaceDomainName($stub, $domain)
             ->replaceMarkdownView($stub, $markdownView)
             ->replaceClass($stub, $name);
     }
 
-    protected function replaceUnitName(&$stub, $name)
+    protected function replaceDomainName(&$stub, $name)
     {
         $stub = str_replace(
-            ['DummyUnit'],
+            ['Dummydomain'],
             [$name],
             $stub
         );
@@ -71,7 +72,7 @@ class  MailMakeCommand extends LaravelMailMakeCommand
     public function getArguments()
     {
         return array_merge([
-            ['unit', InputArgument::REQUIRED, 'The name of unit'],
+            ['domain', InputArgument::REQUIRED, 'The name of domain'],
         ], parent::getArguments());
     }
 }
