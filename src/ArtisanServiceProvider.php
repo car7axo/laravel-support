@@ -1,6 +1,7 @@
 <?php
 namespace Car7axo\Laravel\Support;
 
+use Car7axo\Laravel\Support\Console\Commands\ChannelMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ConsoleMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\MailMakeCommand;
@@ -29,5 +30,6 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'ObserverMake' => ObserverMakeCommand::class,
         'MailMake' => MailMakeCommand::class,
         'RequestMake' => RequestMakeCommand::class,
+        'ChannelMake' => ChannelMakeCommand::class,
     ];
 }
