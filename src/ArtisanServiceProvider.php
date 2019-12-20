@@ -9,6 +9,7 @@ use Car7axo\Laravel\Support\Console\Commands\ExceptionMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\JobMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ListenerMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\MailMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\MiddlewareMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\NotificationMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ObserverMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\PolicyMakeCommand;
@@ -45,5 +46,6 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'JobMake' => JobMakeCommand::class,
         'ExceptionMake' => ExceptionMakeCommand::class,
         'ListenerMake' => ListenerMakeCommand::class,
+        'MiddlewareMake' => MiddlewareMakeCommand::class
     ];
 }
