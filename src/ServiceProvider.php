@@ -1,4 +1,5 @@
 <?php
+
 namespace Car7axo\Laravel\Support;
 
 use Illuminate\Support\Collection;
@@ -6,13 +7,14 @@ use \Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class ServiceProvider extends LaravelServiceProvider
 {
-     /**
+    /**
      * Providers to be registered
      *
      * @var array
      */
     protected $providers = [
-        \Car7axo\Laravel\Support\ArtisanServiceProvider::class
+        '\Car7axo\Laravel\Support\ArtisanServiceProvider',
+        '\Car7axo\Laravel\Support\MigrationServiceProvider'
     ];
 
 
@@ -39,5 +41,4 @@ class ServiceProvider extends LaravelServiceProvider
             $this->app->register($providerClass);
         });
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Car7axo\Laravel\Support\Console;
 
 use Illuminate\Support\Str;
@@ -17,7 +18,7 @@ trait ConsoleUtils
      * @param string|null $path
      * @return string
      */
-    protected function generateLayerNamespace(string $namespace, string $layer, string $path = null) : string
+    protected function generateLayerNamespace(string $namespace, string $layer, string $path = null): string
     {
         $layerName = Str::ucfirst($namespace);
         $layer = Str::studly($layer);
@@ -39,7 +40,7 @@ trait ConsoleUtils
      * @param string|null $path
      * @return string
      */
-    protected function generateLayerPath(string $namespace, string $layer, string $path = null) : string
+    protected function generateLayerPath(string $namespace, string $layer, string $path = null): string
     {
         $layerName = Str::ucfirst($namespace);
         $layer = Str::studly($layer);
@@ -58,7 +59,7 @@ trait ConsoleUtils
      * @param string|null $path
      * @return string
      */
-    protected function domainNamespace(string $path = null) : string
+    protected function domainNamespace(string $path = null): string
     {
         return $this->generateLayerNamespace(
             'Domains',
@@ -73,7 +74,7 @@ trait ConsoleUtils
      * @param string|null $path
      * @return string
      */
-    protected function domainPath(string $path = null) : string
+    protected function domainPath(string $path = null): string
     {
         return $this->generateLayerPath(
             'Domains',
@@ -88,7 +89,7 @@ trait ConsoleUtils
      * @param string|null $path
      * @return string
      */
-    protected function unitNamespace(string $path = null) : string
+    protected function unitNamespace(string $path = null): string
     {
         return $this->generateLayerNamespace(
             'Units',
@@ -103,7 +104,7 @@ trait ConsoleUtils
      * @param string|null $path
      * @return string
      */
-    protected function unitPath(string $path = null) : string
+    protected function unitPath(string $path = null): string
     {
         return $this->generateLayerPath(
             'Units',

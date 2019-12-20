@@ -1,4 +1,5 @@
 <?php
+
 namespace Car7axo\Laravel\Support\Domain;
 
 use Illuminate\Database\Eloquent\Factory;
@@ -106,9 +107,9 @@ abstract class ServiceProvider extends LaravelServiceProvider
      */
     protected function registerFactories()
     {
-        if (! app()->environment('production')) {
+        if (!app()->environment('production')) {
             app(Factory::class)->load(
-                $this->domainPath('Database/factories')
+                $this->domainPath('Database/Factories')
             );
         }
     }
@@ -123,11 +124,11 @@ abstract class ServiceProvider extends LaravelServiceProvider
     protected function domainPath($append = null)
     {
         $reflection = new \ReflectionClass($this);
-        $realPath = realpath(dirname($reflection->getFileName()).'/../');
+        $realPath = realpath(dirname($reflection->getFileName()) . '/../');
         if (!$append) {
             return $realPath;
         }
-        return $realPath.'/'.$append;
+        return $realPath . '/' . $append;
     }
 
     /**
@@ -144,5 +145,4 @@ abstract class ServiceProvider extends LaravelServiceProvider
             }
         }
     }
-
 }

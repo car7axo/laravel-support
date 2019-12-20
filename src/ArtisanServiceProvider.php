@@ -5,6 +5,7 @@ namespace Car7axo\Laravel\Support;
 use Car7axo\Laravel\Support\Console\Commands\ConsoleMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\FactoryMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\MigrateMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ModelMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\SeederMakeCommand;
 use \Illuminate\Foundation\Providers\ArtisanServiceProvider as LaravelArtisanServiceProvider;
