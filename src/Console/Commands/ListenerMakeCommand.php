@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\ListenerMakeCommand as LaravelListenerMakeComm
 use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Filesystem\Filesystem;
 
 class ListenerMakeCommand extends LaravelListenerMakeCommand
 {
@@ -29,7 +30,7 @@ class ListenerMakeCommand extends LaravelListenerMakeCommand
         $event = $this->option('event');
 
         if (! Str::startsWith($event, [
-            $this->domainNamespace().'\\',
+            $this->domainNamespace(),
             'Illuminate',
             '\\',
         ])) {
@@ -37,12 +38,22 @@ class ListenerMakeCommand extends LaravelListenerMakeCommand
         }
 
         $stub = str_replace(
-            'DummyEvent', class_basename($event), parent::buildClass($name)
+            'DummyEvent', class_basename($event), $this->buildClassByListener($name)
         );
-
+        
         return str_replace(
             'DummyFullEvent', trim($event, '\\'), $stub
         );
+    }
+
+    protected function buildClassByListener($name)
+    {
+        $files = new Filesystem();
+
+        $stub = $files->get($this->getStub());
+
+        return $this->replaceNamespace($stub, $name)->replaceClass($stub, $name);
+
     }
 
     protected function getStub()
