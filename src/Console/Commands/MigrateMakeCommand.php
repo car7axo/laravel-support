@@ -5,7 +5,6 @@ namespace Car7axo\Laravel\Support\Console\Commands;
 use Car7axo\Laravel\Support\Console\ConsoleUtils;
 use Illuminate\Database\Console\Migrations\MigrateMakeCommand as LaravelMigrateMakeCommand;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 
 class MigrateMakeCommand extends LaravelMigrateMakeCommand
 {
