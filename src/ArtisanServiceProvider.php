@@ -7,7 +7,9 @@ use Car7axo\Laravel\Support\Console\Commands\ControllerMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\MailMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\NotificationMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ObserverMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\PolicyMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\RequestMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\RuleMakeCommand;
 use \Illuminate\Foundation\Providers\ArtisanServiceProvider as LaravelArtisanServiceProvider;
 
 class ArtisanServiceProvider extends LaravelArtisanServiceProvider
@@ -32,6 +34,8 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'MailMake' => MailMakeCommand::class,
         'RequestMake' => RequestMakeCommand::class,
         'ChannelMake' => ChannelMakeCommand::class,
-        'NotificationMake' => NotificationMakeCommand::class
+        'NotificationMake' => NotificationMakeCommand::class,
+        'RuleMake' => RuleMakeCommand::class,
+        'PolicyMake' => PolicyMakeCommand::class
     ];
 }
