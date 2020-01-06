@@ -67,10 +67,12 @@ class FactoryMakeCommand extends LaravelFactoryMakeCommand
             [
                 'NamespacedDummyModel',
                 'DummyModel',
+                'DummyNamespace'
             ],
             [
                 $namespaceModel,
                 $model,
+                $this->domainNamespace('Database/Factories')
             ],
             $this->replaceNamespace($stub, $name)->replaceClass($stub, $name)
         );

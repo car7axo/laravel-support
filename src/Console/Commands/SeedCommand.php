@@ -10,7 +10,6 @@ class SeedCommand extends LaravelSeedCommand
 {
     use ConsoleUtils;
 
-
     /**
      * Get the console command arguments.
      *
