@@ -20,6 +20,7 @@ use Car7axo\Laravel\Support\Console\Commands\FactoryMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ModelMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\SeedCommand;
 use Car7axo\Laravel\Support\Console\Commands\SeederMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\TestMakeCommand;
 use Illuminate\Console\Scheduling\ScheduleFinishCommand;
 use Illuminate\Console\Scheduling\ScheduleRunCommand;
 use \Illuminate\Foundation\Providers\ArtisanServiceProvider as LaravelArtisanServiceProvider;
@@ -38,8 +39,8 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'QueueTable' => 'command.queue.table',
         'SessionTable' => 'command.session.table',
         'Serve' => 'command.serve',
-        'TestMake' => 'command.test.make',
         'VendorPublish' => 'command.vendor.publish',
+        'TestMake' => TestMakeCommand::class,
         'ControllerMake' => ControllerMakeCommand::class,
         'ConsoleMake' => ConsoleMakeCommand::class,
         'ObserverMake' => ObserverMakeCommand::class,
