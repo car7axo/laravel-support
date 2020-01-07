@@ -40,7 +40,7 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'SessionTable' => 'command.session.table',
         'Serve' => 'command.serve',
         'VendorPublish' => 'command.vendor.publish',
-        'TestMake' => TestMakeCommand::class,
+        'TestMake' => 'command.test.make',
         'ControllerMake' => ControllerMakeCommand::class,
         'ConsoleMake' => ConsoleMakeCommand::class,
         'ObserverMake' => ObserverMakeCommand::class,
