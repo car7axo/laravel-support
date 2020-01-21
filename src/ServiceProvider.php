@@ -7,6 +7,12 @@ use \Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class ServiceProvider extends LaravelServiceProvider
 {
+
+    protected $commands = [
+        '\Car7axo\Laravel\Support\Console\Commands\DomainMakeCommand',
+        '\Car7axo\Laravel\Support\Console\Commands\UnitMakeCommand'
+    ];
+
     /**
      * Providers to be registered
      *
@@ -26,6 +32,7 @@ class ServiceProvider extends LaravelServiceProvider
     public function register()
     {
         $this->registerProviders(collect($this->providers));
+        $this->commands($this->commands);
     }
 
     /**

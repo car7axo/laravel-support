@@ -18,6 +18,7 @@ use Car7axo\Laravel\Support\Console\Commands\RequestMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\RuleMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\FactoryMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\ModelMakeCommand;
+use Car7axo\Laravel\Support\Console\Commands\ProviderMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\SeedCommand;
 use Car7axo\Laravel\Support\Console\Commands\SeederMakeCommand;
 use Car7axo\Laravel\Support\Console\Commands\TestMakeCommand;
@@ -50,6 +51,7 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'NotificationMake' => NotificationMakeCommand::class,
         'RuleMake' => RuleMakeCommand::class,
         'PolicyMake' => PolicyMakeCommand::class,
+        'ProviderMake' => ProviderMakeCommand::class,
         'EventMake' => EventMakeCommand::class,
         'JobMake' => JobMakeCommand::class,
         'ExceptionMake' => ExceptionMakeCommand::class,

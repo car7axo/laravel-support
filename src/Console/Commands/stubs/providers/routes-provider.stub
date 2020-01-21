@@ -1,0 +1,10 @@
+<?php
+
+namespace DummyNamespace;
+
+use Car7axo\Laravel\Support\Unit\RouteServiceProvider as ServiceProvider;
+
+class RouteServiceProvider extends ServiceProvider
+{
+    protected $namespace = '\DummyControllerNamespace';
+}
