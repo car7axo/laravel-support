@@ -6,23 +6,5 @@ use Car7axo\Laravel\Support\Domain\ServiceProvider;
 
 class DomainServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+    //...
 }
