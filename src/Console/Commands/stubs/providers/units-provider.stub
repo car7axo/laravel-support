@@ -1,0 +1,16 @@
+<?php
+
+namespace DummyNamespace;
+
+use Car7axo\Laravel\Support\Unit\ServiceProvider;
+
+class UnitServiceProvider extends ServiceProvider
+{
+    protected $alias = 'DummyAlias';
+
+    protected $hasViews = true;
+
+    protected $providers = [
+        RouteServiceProvider::class,
+    ];
+}

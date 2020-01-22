@@ -1,33 +1,35 @@
 {
   "name": "car7axo/laravel-support",
-  "description": "Support tools for our Laravel Skeleton.",
-  "keywords": ["framework", "laravel", "support", "car7axo"],
+  "description": "Support files to custom Laravel Framework inspired by DDD pattern",
+  "type": "library",
   "license": "MIT",
-  "homepage": "https://laravel.com",
-  "support": {
-    "issues": "https://github.com/car7axo/laravel-support/issues",
-    "source": "https://github.com/car7axo/laravel-support"
-  },
   "authors": [
     {
       "name": "Diogo Brito",
-      "email": "diovob.cartaxo@gmail.com"
+      "email": "diogob.cartaxo@gmail.com"
     }
   ],
-  "require": {
-    "php": "^7.1.3",
-    "illuminate/routing": "5.8.*",
-    "illuminate/database": "5.8.*",
-    "illuminate/support": "5.8.*",
-    "illuminate/contracts": "5.8.*",
-    "illuminate/validation": "5.8.*",
-    "prettus/l5-repository": "^2.6"
-  },
   "autoload": {
     "psr-4": {
       "Car7axo\\Laravel\\Support\\": "src/"
     }
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  "autoload-dev": {
+    "psr-4": {
+      "Car7axo\\Laravel\\Support\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=7.2"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Car7axo\\Laravel\\Support\\ServiceProvider"
+      ]
+    }
+  }
 }

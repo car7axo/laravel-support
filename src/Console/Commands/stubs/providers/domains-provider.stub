@@ -1,0 +1,10 @@
+<?php
+
+namespace DummyNamespace;
+
+use Car7axo\Laravel\Support\Domain\ServiceProvider;
+
+class DomainServiceProvider extends ServiceProvider
+{
+    //...
+}
