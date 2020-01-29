@@ -54,7 +54,7 @@ class SeederMakeCommand extends LaravelSeederMakeCommand
     {
         $stub = str_replace(
             ['DummyNamespace', 'DummyRootNamespace', 'NamespacedDummyUserModel'],
-            [$this->domainNamespace('Database/Seeders'), $this->rootNamespace(), $this->userProviderModel()],
+            [$this->domainNamespace('Database/Seeds'), $this->rootNamespace(), $this->userProviderModel()],
             $stub
         );
 

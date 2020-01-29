@@ -44,6 +44,18 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
 
                 break;
 
+            case 'web':
+                $name = 'web';
+                $layer = 'app/' . $this->option('layer') . '/' . $this->option('unit') . '/Routes';
+
+                break;
+
+            case 'api':
+                $name = 'api';
+                $layer = 'app/' . $this->option('layer') . '/' . $this->option('unit') . '/Routes';
+
+                break;
+
             default:
                 $this->layerName = $this->choice('Witch layer do want to put your provider, Domains or Units?', ['Domains', 'Units']);
                 $this->directory = $this->ask("Witch {$this->layerName} do want to put your provider");
@@ -71,7 +83,9 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
         $this->makeDirectory($path);
         $this->files->put($path, $this->sortImports($this->buildClass($name)));
 
-        $this->info($this->type . ' created successfully.');
+        if (!$this->option('quiet')) {
+            $this->info($this->type . ' created successfully.');
+        }
     }
 
     /**
@@ -85,7 +99,7 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
             ['unit', 'u', InputOption::VALUE_OPTIONAL, 'Generate a Unit Provider'],
             ['domain', 'd', InputOption::VALUE_OPTIONAL, 'Generate a Domain Provider'],
             ['layer', 'l', InputOption::VALUE_REQUIRED, 'Layer name'],
-            ['type', 't', InputOption::VALUE_OPTIONAL, 'Defination Type Provider'],
+            ['type', 't', InputOption::VALUE_OPTIONAL, 'Defination Type Provider']
         ];
     }
 
@@ -112,6 +126,14 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
 
         if ($type === 'unitRoute') {
             $stub = '/stubs/providers/routes-provider.stub';
+        }
+
+        if ($type === 'web') {
+            $stub = '/stubs/routes/routes-web.stub';
+        }
+
+        if ($type === 'api') {
+            $stub = '/stubs/routes/routes-api.stub';
         }
 
         return __DIR__ . $stub;

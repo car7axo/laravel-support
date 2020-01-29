@@ -30,7 +30,7 @@ class SeedCommand extends LaravelSeedCommand
     {
         $class = $this->input->getOption('class') === 'DatabaseSeeder'
             ? 'App\\Domains\\Core\\Database\\Seeds\\DatabaseSeeder'
-            : $this->domainNamespace('Database/Seeders') . '\\' .  $this->input->getOption('class');
+            : $this->domainNamespace('Database/Seeds') . '\\' .  $this->input->getOption('class');
 
         $class = $this->laravel->make($class);
 
