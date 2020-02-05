@@ -43,14 +43,12 @@ class UnitMakeCommand extends Command
         $this->call('make:provider', [
             '--unit' => $this->input->getArgument('name'),
             'name' => $this->input->getArgument('name'),
-            '--layer' => 'Units',
             '--type' => 'units'
         ]);
 
         $this->call('make:provider', [
             '--unit' => $this->input->getArgument('name'),
             'name' => $this->input->getArgument('name'),
-            '--layer' => 'Units',
             '--type' => 'unitRoute',
             '--quiet' => '-q'
         ]);
@@ -58,7 +56,6 @@ class UnitMakeCommand extends Command
         $this->call('make:provider', [
             '--unit' => $this->input->getArgument('name'),
             'name' => $this->input->getArgument('name'),
-            '--layer' => 'Units',
             '--type' => 'web',
             '--quiet' => '-q'
         ]);
@@ -66,7 +63,6 @@ class UnitMakeCommand extends Command
         $this->call('make:provider', [
             '--unit' => $this->input->getArgument('name'),
             'name' => $this->input->getArgument('name'),
-            '--layer' => 'Units',
             '--type' => 'api',
             '--quiet' => '-q'
         ]);

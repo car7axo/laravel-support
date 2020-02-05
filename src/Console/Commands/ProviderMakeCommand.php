@@ -28,37 +28,59 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
         switch ($this->option('type')) {
             case 'domains':
                 $name = 'DomainServiceProvider';
-                $layer = 'app/' . $this->option('layer') . '/' . $this->option('domain') . '/Providers';
+                $this->layerName = 'Domains';
+                $layer = "app/{$this->layerName}/{$this->option('domain')}/Providers";
 
                 break;
 
             case 'units':
                 $name = 'UnitServiceProvider';
-                $layer = 'app/' . $this->option('layer') . '/' . $this->option('unit') . '/Providers';
+                $this->layerName = 'Units';
+                $layer = "app/{$this->layerName}/{$this->option('unit')}/Providers";
 
                 break;
 
             case 'unitRoute':
                 $name = 'RouteServiceProvider';
-                $layer = 'app/' . $this->option('layer') . '/' . $this->option('unit') . '/Providers';
+                $this->layerName = 'Units';
+                $layer = "app/{$this->layerName}/{$this->option('unit')}/Providers";
+
+                break;
+
+            case 'route':
+                $name = 'RouteServiceProvider';
+                $this->layerName = 'Units';
+                $this->directory = $this->option('unit') ? $this->option('unit')  : $this->ask("Witch {$this->layerName} do want to put your provider");
+                $layer = "app/{$this->layerName}/{$this->directory}/Providers";
 
                 break;
 
             case 'web':
                 $name = 'web';
-                $layer = 'app/' . $this->option('layer') . '/' . $this->option('unit') . '/Routes';
+                $this->layerName = 'Units';
+                $layer = "app/{$this->layerName}/{$this->option('unit')}/Routes";
 
                 break;
 
             case 'api':
                 $name = 'api';
-                $layer = 'app/' . $this->option('layer') . '/' . $this->option('unit') . '/Routes';
+                $this->layerName = 'Units';
+                $layer = "app/{$this->layerName}/{$this->option('unit')}/Routes";
 
                 break;
 
             default:
-                $this->layerName = $this->choice('Witch layer do want to put your provider, Domains or Units?', ['Domains', 'Units']);
-                $this->directory = $this->ask("Witch {$this->layerName} do want to put your provider");
+                if ($this->option('unit')) {
+                    $this->layerName = 'Units';
+                    $this->directory = $this->option('unit');
+                } elseif ($this->option('domain')) {
+                    $this->layerName = 'Domains';
+                    $this->directory = $this->option('domain');
+                } else {
+                    $this->layerName = $this->choice('Witch layer do want to put your provider, Domains or Units?', ['Domains', 'Units']);
+                    $this->directory = $this->ask("Witch {$this->layerName} do want to put your provider");
+                }
+
                 $layer = "app/{$this->layerName}/{$this->directory}/Providers";
 
                 break;
@@ -98,7 +120,6 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
         return [
             ['unit', 'u', InputOption::VALUE_OPTIONAL, 'Generate a Unit Provider'],
             ['domain', 'd', InputOption::VALUE_OPTIONAL, 'Generate a Domain Provider'],
-            ['layer', 'l', InputOption::VALUE_REQUIRED, 'Layer name'],
             ['type', 't', InputOption::VALUE_OPTIONAL, 'Defination Type Provider']
         ];
     }
@@ -124,7 +145,7 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
             $stub = '/stubs/providers/domains-provider.stub';
         }
 
-        if ($type === 'unitRoute') {
+        if ($type === 'route' || $type === 'unitRoute') {
             $stub = '/stubs/providers/routes-provider.stub';
         }
 
@@ -148,12 +169,11 @@ class ProviderMakeCommand extends LaravelProviderMakeCommand
      */
     protected function replaceNamespace(&$stub, $name)
     {
-        $namespace = $this->option('layer');
-        $directory = $this->getNameInput();
+        $namespace = $this->layerName;
+        $directory = $this->directory;
 
-        if ($namespace === null) {
-            $namespace = $this->layerName;
-            $directory = $this->directory;
+        if ($directory === null) {
+            $directory = $this->getNameInput();
         }
 
         $stub = str_replace(
