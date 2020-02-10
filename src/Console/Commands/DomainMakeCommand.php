@@ -43,7 +43,6 @@ class DomainMakeCommand extends Command
         $this->call('make:provider', [
             '--domain' => $this->input->getArgument('name'),
             'name' => $this->input->getArgument('name'),
-            '--layer' => 'Domains',
             '--type' => 'domains'
         ]);
     }
