@@ -2,7 +2,6 @@
 
 namespace Car7axo\Laravel\Support;
 
-use Car7axo\Laravel\Support\Console\Commands\MigrateMakeCommand;
 use Illuminate\Database\MigrationServiceProvider as LaravelMigrationServiceProvider;
 
 class MigrationServiceProvider extends LaravelMigrationServiceProvider
@@ -20,6 +19,6 @@ class MigrationServiceProvider extends LaravelMigrationServiceProvider
         'MigrateReset' => 'command.migrate.reset',
         'MigrateRollback' => 'command.migrate.rollback',
         'MigrateStatus' => 'command.migrate.status',
-        'MigrateMake' => MigrateMakeCommand::class,
+        'MigrateMake' => \Car7axo\Laravel\Support\Console\Commands\MigrateMakeCommand::class,
     ];
 }

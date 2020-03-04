@@ -2,8 +2,11 @@
 
 namespace Car7axo\Laravel\Support\Console\Commands;
 
+
 use Car7axo\Laravel\Support\Console\ConsoleUtils;
 use Illuminate\Database\Console\Migrations\MigrateMakeCommand as LaravelMigrateMakeCommand;
+use Illuminate\Database\Migrations\MigrationCreator;
+use Illuminate\Support\Composer;
 use Illuminate\Support\Facades\File;
 
 class MigrateMakeCommand extends LaravelMigrateMakeCommand
@@ -23,6 +26,17 @@ class MigrateMakeCommand extends LaravelMigrateMakeCommand
         {--path= : The location where the migration file should be created}
         {--realpath : Indicate any provided migration file paths are pre-resolved absolute paths}
         {--fullpath : Output the full path of the migration}';
+
+    public function __construct(Composer $composer)
+    {
+        parent::__construct(
+            new MigrationCreator(
+                app('Illuminate\Filesystem\Filesystem'),
+                null
+            ),
+            $composer
+        );
+    }
 
     /**
      * Get migration path (either specified by '--path' option or default location).

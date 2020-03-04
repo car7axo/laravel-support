@@ -9,8 +9,8 @@ class ServiceProvider extends LaravelServiceProvider
 {
 
     protected $commands = [
-        '\Car7axo\Laravel\Support\Console\Commands\DomainMakeCommand',
-        '\Car7axo\Laravel\Support\Console\Commands\UnitMakeCommand'
+        \Car7axo\Laravel\Support\Console\Commands\DomainMakeCommand::class,
+        \Car7axo\Laravel\Support\Console\Commands\UnitMakeCommand::class
     ];
 
     /**
@@ -19,8 +19,8 @@ class ServiceProvider extends LaravelServiceProvider
      * @var array
      */
     protected $providers = [
-        '\Car7axo\Laravel\Support\ArtisanServiceProvider',
-        '\Car7axo\Laravel\Support\MigrationServiceProvider'
+        \Car7axo\Laravel\Support\ArtisanServiceProvider::class,
+        \Car7axo\Laravel\Support\MigrationServiceProvider::class
     ];
 
 
