@@ -41,7 +41,7 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'MiddlewareMake' => \Car7axo\Laravel\Support\Console\Commands\MiddlewareMakeCommand::class,
         'ModelMake' => \Car7axo\Laravel\Support\Console\Commands\ModelMakeCommand::class,
         'FactoryMake' => \Car7axo\Laravel\Support\Console\Commands\FactoryMakeCommand::class,
-        'SeederMake' =>  Car7axo\Laravel\Support\Console\Commands\SeederMakeCommand::class,
+        'SeederMake' =>  \Car7axo\Laravel\Support\Console\Commands\SeederMakeCommand::class,
     ];
 
     /**
