@@ -40,7 +40,7 @@ class SeederMakeCommand extends LaravelSeederMakeCommand
      */
     protected function getPath($name)
     {
-        return $this->domainPath("Database/Seeders/{$name}.php");
+        return $this->domainPath("Database/Seeds/{$name}.php");
     }
 
     /**
