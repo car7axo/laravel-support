@@ -30,6 +30,7 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'MailMake' => \Car7axo\Laravel\Support\Console\Commands\MailMakeCommand::class,
         'RequestMake' => \Car7axo\Laravel\Support\Console\Commands\RequestMakeCommand::class,
         'ChannelMake' => \Car7axo\Laravel\Support\Console\Commands\ChannelMakeCommand::class,
+        'ComponentMake' => \Car7axo\Laravel\Support\Console\Commands\ComponentMakeCommand::class,
         'NotificationMake' => \Car7axo\Laravel\Support\Console\Commands\NotificationMakeCommand::class,
         'RuleMake' => \Car7axo\Laravel\Support\Console\Commands\RuleMakeCommand::class,
         'PolicyMake' => \Car7axo\Laravel\Support\Console\Commands\PolicyMakeCommand::class,
@@ -42,6 +43,8 @@ class ArtisanServiceProvider extends LaravelArtisanServiceProvider
         'ModelMake' => \Car7axo\Laravel\Support\Console\Commands\ModelMakeCommand::class,
         'FactoryMake' => \Car7axo\Laravel\Support\Console\Commands\FactoryMakeCommand::class,
         'SeederMake' =>  \Car7axo\Laravel\Support\Console\Commands\SeederMakeCommand::class,
+        'CastMake' =>  \Car7axo\Laravel\Support\Console\Commands\CastMakeCommand::class,
+        'ResourceMake' =>  \Car7axo\Laravel\Support\Console\Commands\ResourceMakeCommand::class,
     ];
 
     /**

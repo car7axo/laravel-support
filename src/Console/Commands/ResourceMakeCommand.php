@@ -1,24 +1,22 @@
 <?php
-
 namespace Car7axo\Laravel\Support\Console\Commands;
 
 use Car7axo\Laravel\Support\Console\ConsoleUtils;
-use Illuminate\Foundation\Console\PolicyMakeCommand as LaravelPolicyMakeCommand;
+use Illuminate\Foundation\Console\ResourceMakeCommand as LaravelResourceMakeCommand;
 use Symfony\Component\Console\Input\InputArgument;
 
-class PolicyMakeCommand extends LaravelPolicyMakeCommand
-{
+class ResourceMakeCommand extends LaravelResourceMakeCommand {
     use ConsoleUtils;
-    
+
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $this->domainNamespace('Policies');
+        return $this->unitNamespace('Http\Resources');
     }
 
     protected function getArguments()
     {
         return array_merge([
-            ['domain', InputArgument::REQUIRED, 'Domain name'],
-        ], parent::getArguments());
+           ['unit', InputArgument::REQUIRED, 'Unit name'],
+       ], parent::getArguments());
     }
 }

@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputArgument;
 class EventMakeCommand extends LaravelEventMakeCommand
 {
     use ConsoleUtils;
-    
+
     protected function getDefaultNamespace($rootNamespace)
     {
         return $this->domainNamespace('Events');
@@ -18,7 +18,7 @@ class EventMakeCommand extends LaravelEventMakeCommand
     protected function getArguments()
     {
         return array_merge([
-            ['domain', InputArgument::REQUIRED, 'Domain name'],
-        ], parent::getArguments());
+           ['domain', InputArgument::REQUIRED, 'Domain name'],
+       ], parent::getArguments());
     }
 }
